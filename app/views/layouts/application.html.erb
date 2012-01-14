@@ -2,6 +2,10 @@
 <html>
 <head>
   <title>Mcguffin</title>
+  <!--[if lt IE 9]>
+  <%= javascript_include_tag 'html5' %>
+  <%= stylesheet_link_tag    "html5" %>
+  <![endif]-->
   <%= stylesheet_link_tag    "application" %>
   <!--[if IE6]><%= stylesheet_link_tag 'ie6' %><![endif]-->
   <!--[if IE7]><%= stylesheet_link_tag 'ie7' %><![endif]-->
@@ -11,18 +15,19 @@
 <body>
 
   <header>
+    <p>McGuffin</p>
     <p><%= render_breadcrumbs %></p>
   </header>
 
-<%= yield %>
+  <%= yield %>
 
   <footer>
 
     <p>
       <% if author_signed_in? %>
-        <%= link_to 'Sign out', destroy_author_session_path, :method => :delete %>
+        <%= link_to 'Author Sign out', destroy_author_session_path, :method => :delete %>
       <% else %>
-        <%= link_to 'Sign in', new_author_session_path %>
+        <%= link_to 'Author Sign in', new_author_session_path %>
       <% end %>
     </p>
 
