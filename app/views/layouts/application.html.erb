@@ -10,7 +10,23 @@
 </head>
 <body>
 
+  <header>
+    <p><%= render_breadcrumbs %></p>
+  </header>
+
 <%= yield %>
+
+  <footer>
+
+    <p>
+      <% if author_signed_in? %>
+        <%= link_to 'Sign out', destroy_author_session_path, :method => :delete %>
+      <% else %>
+        <%= link_to 'Sign in', new_author_session_path %>
+      <% end %>
+    </p>
+
+  </footer>
 
 </body>
 </html>

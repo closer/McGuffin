@@ -4,8 +4,12 @@ Mcguffin::Application.routes.draw do
   devise_for :authors
 
   authenticate do
-    resources :entries
+    resources :entries, :except => [:index, :show]
   end
+
+  resources :entries, :only => [:index, :show]
+
+  root :to => "entries#index"
 
   mount Ckeditor::Engine => '/ckeditor'
 
