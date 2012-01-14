@@ -1,4 +1,6 @@
 Mcguffin::Application.routes.draw do
+  resources :entries
+
   mount Ckeditor::Engine => '/ckeditor'
 
   # The priority is based upon order of creation:
