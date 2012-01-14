@@ -1,4 +1,6 @@
 Mcguffin::Application.routes.draw do
+  devise_for :authors
+
   resources :entries
 
   mount Ckeditor::Engine => '/ckeditor'
