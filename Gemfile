@@ -46,7 +46,7 @@ gem 'unicorn'
 group :development do
   # Deploy with Capistrano
   gem 'capistrano'
-  gem 'capistrano-unicorn'
+  gem 'capistrano-unicorn', :git => 'git://github.com/closer/capistrano-unicorn.git'
 end
 
 # To use debugger
