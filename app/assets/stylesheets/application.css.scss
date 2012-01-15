@@ -4,7 +4,16 @@
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require_self
  *= require formtastic
+
+ *= require entries
+ *= require categories
 */
+
+$content_width : 1100px;
+$main_width: 800px;
+$content_space: 10px;
+
+@import url(http://fonts.googleapis.com/css?family=Trade+Winds|Duru+Sans|Shadows+Into+Light|Arapey);
 
 html, body {
   margin:0;
@@ -12,9 +21,98 @@ html, body {
 }
 
 body {
+  font-family: 'Duru Sans', sans-serif;
 }
 
 header {
-  margin: 0;
   padding: 0;
+  margin: 0 auto ;
+  width:$content_width;
+
+  #categories {
+    padding:0;
+    background:#333;
+    font-size:14px;
+    color:#fff;
+
+    p {
+      margin:0;
+      padding:2px 5px;
+    }
+    a {
+      color:#fff;
+      text-decoration:none;
+      &:hover {
+        text-decoration:underline;
+      }
+    }
+  }
+}
+
+#wrapper {
+
+  margin: 0 auto;
+  width:$content_width;
+
+  overflow:hidden;
+  _height:1px;
+  _overflow:visible;
+
+  #breadcrumbs {
+    border-bottom:1px solid #666;
+
+    p {
+      margin:0;
+      padding:2px;
+      font-size:12px;
+
+      color: #666;
+      a {
+        color: #999;
+      }
+    }
+  }
+
+  #notice {
+    background:#FFE;
+    padding:0.5em;
+    font-size:12px;
+    color:#333;
+  }
+
+  #main {
+    float:left;
+    width:$main_width;
+    margin-right:$content_space;
+    article {
+    }
+  }
+
+  #side {
+    float:left;
+    padding:10px 0;
+    width:$content_width - $main_width - $content_space;
+
+    .box {
+      font-size:12px;
+      padding:0;
+      margin-bottom:$content_space;
+      background:#f0f0f0;
+
+      .title {
+        padding:1.0em;
+        font-weight:bold;
+        border-bottom:1px solid #666;
+      }
+    }
+  }
+}
+
+footer {
+  border-top: 1px solid #333;
+  margin: 20px auto;
+  padding: 20px 0;
+  width:$content_width;
+
+
 }

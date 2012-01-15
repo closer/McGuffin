@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120114220849) do
+ActiveRecord::Schema.define(:version => 20120115092146) do
 
   create_table "authors", :force => true do |t|
     t.string   "name"
@@ -32,6 +32,13 @@ ActiveRecord::Schema.define(:version => 20120114220849) do
   add_index "authors", ["email"], :name => "index_authors_on_email", :unique => true
   add_index "authors", ["reset_password_token"], :name => "index_authors_on_reset_password_token", :unique => true
 
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name",                  :null => false
     t.string   "data_content_type"
@@ -49,6 +56,13 @@ ActiveRecord::Schema.define(:version => 20120114220849) do
   create_table "entries", :force => true do |t|
     t.string   "title"
     t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "entry_categories", :force => true do |t|
+    t.integer  "category_id"
+    t.integer  "entry_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

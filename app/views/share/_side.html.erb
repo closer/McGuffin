@@ -1,0 +1,15 @@
+
+<div id="side">
+  <div class="box">
+    <p class="title">Side</p>
+  </div>
+  <div class="box">
+    <p class="title">Category</p>
+    <ul>
+      <% Category.all.each do |category| %>
+        <li><%= link_to category.name, category %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+

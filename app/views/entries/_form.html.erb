@@ -12,6 +12,7 @@
 <%= semantic_form_for @entry, :remote => true do |f| %>
   <%= f.inputs do %>
     <%= f.input :title %>
+    <%= f.input :categories, :as => :check_boxes, :collection => Category.all %>
     <%= f.input :content, :as => :ckeditor %>
   <% end %>
 

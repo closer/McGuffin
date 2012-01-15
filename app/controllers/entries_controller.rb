@@ -1,4 +1,5 @@
 class EntriesController < ApplicationController
+
   # GET /entries
   # GET /entries.json
   def index
@@ -14,6 +15,8 @@ class EntriesController < ApplicationController
   # GET /entries/1.json
   def show
     @entry = Entry.find(params[:id])
+
+    add_breadcrumb @entry.title, @entry
 
     respond_to do |format|
       format.html # show.html.erb

@@ -1,13 +1,16 @@
 Mcguffin::Application.routes.draw do
+
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   devise_for :authors
 
   authenticate do
-    resources :entries, :except => [:index, :show]
+    resources :entries,    :except => [:index, :show]
+    resources :categories, :except => [:index, :show]
   end
 
-  resources :entries, :only => [:index, :show]
+  resources :entries,    :only => [:index, :show]
+  resources :categories, :only => [:index, :show]
 
   root :to => "entries#index"
 

@@ -1,11 +1,15 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @entry.title %>
-</p>
+<div id="main" class="entry">
+
+<p class="title"><%= @entry.title %></p>
 
 <%=raw @entry.content %>
 
+<div class="meta">
+  <p>id:<%= @entry.id %></p>
+</div>
 
-<%= link_to 'Back', entries_path %>
+</div>
+
+<%= render 'share/side' %>
+

@@ -1,15 +1,7 @@
-<h1>Listing entries</h1>
 
-<table>
-  <tr>
-    <th>Title</th>
-  </tr>
-
-<% @entries.each do |entry| %>
-  <tr>
-    <td><%= link_to entry.title, entry %></td>
-  </tr>
-<% end %>
-</table>
-
+<ul>
+  <% @entries.each do |entry| %>
+    <li><%= link_to entry.title, entry %></li>
+  <% end %>
+</ul>
 

@@ -1,0 +1,19 @@
+
+<p>
+  <b>Name:</b>
+  <%= @category.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @category.description %>
+</p>
+
+<ul>
+  <% @category.entries.each do |entry| %>
+    <li><%=link_to entry.title, entry %></li>
+  <% end %>
+</ul>
+
+<%= link_to 'Edit', edit_category_path(@category) %> |
+<%= link_to 'Back', categories_path %>
