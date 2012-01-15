@@ -1,3 +1,5 @@
+#= require 'ckeditor/config'
+
 CKEDITOR.editorConfig = (config)->
 
   config.language = 'ja'
