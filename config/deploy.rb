@@ -6,8 +6,6 @@ require "bundler/capistrano"
 
 require "capistrano_database_yml"
 
-load 'deploy/assets'
-
 set :application, "McGuffin"
 
 set :user, 'unicorn'
