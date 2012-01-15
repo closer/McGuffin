@@ -5,9 +5,16 @@
   </div>
   <div class="box">
     <p class="title">Category</p>
-    <ul>
-      <% Category.all.each do |category| %>
-        <li><%= link_to category.name, category %></li>
+    <ul class="categories">
+      <% ParentCategory.all.each do |parent_category| %>
+        <li>
+          <%= link_to parent_category.name, category_path(parent_category) %>
+          <ul>
+            <% parent_category.categories.each do |category| %>
+              <li><%= link_to category.name, category_path(category) %></li>
+            <% end %>
+          </ul>
+        </li>
       <% end %>
     </ul>
   </div>

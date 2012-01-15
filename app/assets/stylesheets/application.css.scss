@@ -95,7 +95,7 @@ header {
 
     .box {
       font-size:12px;
-      padding:0;
+      padding:1px;
       margin-bottom:$content_space;
       background:#f0f0f0;
 
@@ -103,6 +103,15 @@ header {
         padding:1.0em;
         font-weight:bold;
         border-bottom:1px solid #666;
+      }
+
+      ul.categories {
+        list-style:none;
+        list-style-position:outside;
+        margin:0;
+        padding:0;
+        li {
+        }
       }
     }
   }

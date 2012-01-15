@@ -7,5 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 %W|Work Hobby Sport Art|.each do |name|
-  Category.create :name => name, :description => ''
+  parent_category = ParentCategory.create :name => name, :description => ''
+  (10).times do |n|
+    parent_category.sub_categories.create :name => "#{name}_#{n}", :description => ''
+  end
 end
