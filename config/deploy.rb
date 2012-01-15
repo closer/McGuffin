@@ -1,7 +1,10 @@
 $:.unshift(File.expand_path('./lib', ENV['rvm_path']))
+$:.unshift 'config/deploy'
 
 require "rvm/capistrano"
 require "bundler/capistrano"
+
+require "capistrano_database_yml"
 
 load 'deploy/assets'
 
